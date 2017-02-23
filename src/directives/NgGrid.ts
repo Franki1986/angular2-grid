@@ -541,6 +541,9 @@ export class NgGrid implements OnInit, DoCheck, OnDestroy {
 		if (this.dragEnable) {
 			var mousePos = this._getMousePosition(e);
 			var item = this._getItemFromPosition(mousePos);
+			if(item == null){
+				return;	
+			}
 			var itemPos = item.getPosition();
 			var pOffset = { 'left': (mousePos.left - itemPos.left), 'top': (mousePos.top - itemPos.top) }
 
